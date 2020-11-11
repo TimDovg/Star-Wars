@@ -1,0 +1,16 @@
+.alert {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: red;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 black;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.show {
+  opacity: 1;
+  padding: 10px;
+}

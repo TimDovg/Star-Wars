@@ -7,12 +7,14 @@ import LeftArrow from '../images/left-arrow.svg'
 import RightArrow from '../images/right-arrow.svg'
 import Planet from '../components/Planet'
 import { getDigitsFromString } from '../utils/utils'
+import Alert from '../components/Alert/Alert'
 
 const PlanetsContainer = () => {
     const { planetsPage } = useParams()
     const history = useHistory()
     const currentPage = useMemo(() => planetsPage, [planetsPage])
     const [ loader, setLoader ] = useState(false)
+    const [ error, setError ] = useState(null)
     const [ nextPage, setNextPage ] = useState(null)
     const [ previousPage, setPreviousPage ] = useState(null)
     const [ planets, setPlanets ] = useState([])
@@ -29,7 +31,7 @@ const PlanetsContainer = () => {
 
     useEffect(() => {
         getPlanets(currentPage)
-            .catch(() => history.push('1'))
+            .catch(() => setError('Wrong fetching!'))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage])
@@ -50,6 +52,8 @@ const PlanetsContainer = () => {
                 <Arrow src={RightArrow} onClick={() => history.push(nextPage)} disabled={!nextPage} />
             </div>
             <h4 className="text-center">{currentPage}</h4>
+
+            <Alert message={error} setError={setError} />
         </>
     )
 }

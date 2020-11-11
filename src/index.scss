@@ -70,3 +70,14 @@ a:hover {
 .whiteSpace-pre-line {
   white-space: pre-line;
 }
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+
+.underline-hover {
+  &:hover {
+    text-decoration: underline;
+  }
+}

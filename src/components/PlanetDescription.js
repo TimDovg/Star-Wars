@@ -1,14 +1,15 @@
 import React, { useEffect, useState} from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import StarWarsAxios from '../axios/StarWarsAxios'
 import Loader from './Loader'
 import { addSpacesToNumber } from '../utils/utils'
 import AdditionalList from './AdditionalList'
+import Alert from './Alert/Alert'
 
 const PlanetDescription = () => {
     const { planetID } = useParams()
-    const history = useHistory()
     const [ loader, setLoader ] = useState(false)
+    const [ error, setError ] = useState(null)
     const [ planetDescription, setPlanetDescription ] = useState({})
     const { name, rotation_period, diameter, climate, gravity, terrain, population, residents } = planetDescription
 
@@ -22,7 +23,7 @@ const PlanetDescription = () => {
 
     useEffect(() => {
         getPlanetDescription(planetID)
-            .catch(() => history.push('1'))
+            .catch(() => setError('Wrong fetching!'))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [planetID])
@@ -40,10 +41,12 @@ const PlanetDescription = () => {
                         <p className="whiteSpace-pre-line">Gravity: {gravity}</p>
                         <p className="whiteSpace-pre-line">Terrain: {terrain}</p>
                         <p className="whiteSpace-pre-line">Population: {addSpacesToNumber(population)}</p>
-                        <AdditionalList fetchInfo={residents} />
+                        <AdditionalList fetchInfo={residents} title="Show residents" />
                     </div>
                 </div>
             }
+
+            <Alert message={error} setError={setError} />
         </>
     )
 }
