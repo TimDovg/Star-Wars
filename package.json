@@ -3,14 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.7",
-    "@types/react": "^16.9.56",
-    "@types/react-dom": "^16.9.9",
-    "@types/react-router-dom": "^5.1.6",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "node-sass": "^4.14.1",
@@ -18,7 +10,6 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
-    "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -28,37 +19,24 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
     "extends": [
       "react-app",
       "react-app/jest",
       "eslint:recommended"
     ],
     "rules": {
-      "no-unused-vars": "error",
-      "no-console": "error",
-      "no-debugger": "error",
+      "no-unused-vars": "warn",
+      "no-console": "warn",
+      "no-debugger": "warn",
       "quotes": [
-        "error",
+        "warn",
         "single"
       ],
       "semi": [
-        2,
+        "warn",
         "never"
       ]
-    },
-    "overrides": [
-      {
-        "files": ["**/*.ts?(x)"],
-        "extends": [
-          "react-app",
-          "react-app/jest",
-          "eslint:recommended",
-          "plugin:@typescript-eslint/recommended"
-        ]
-      }
-    ]
+    }
   },
   "browserslist": {
     "production": [
