@@ -36,7 +36,7 @@ const PlanetsContainer = () => {
 
     return (
         <>
-            <h4 className="cursor-default text-center mt-5">PLANETS</h4>
+            <h4 className="cursor-default text-center mt-5 font-weight-bold">PLANETS</h4>
             <div className="d-flex justify-content-center align-items-center min-height-400">
                 <Arrow src={LeftArrow} onClick={() => history.push(previousPage)} disabled={!previousPage} />
                 <div className="row pr-1 pl-35 w-100">
@@ -49,7 +49,7 @@ const PlanetsContainer = () => {
                 </div>
                 <Arrow src={RightArrow} onClick={() => history.push(nextPage)} disabled={!nextPage} />
             </div>
-            <h4 className="text-center font-weight-bold">{currentPage}</h4>
+            <h4 className="text-center">{currentPage}</h4>
         </>
     )
 }
