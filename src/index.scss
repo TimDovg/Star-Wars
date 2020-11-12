@@ -34,15 +34,6 @@ a:hover {
   width: 10%;
 }
 
-.arrow {
-  opacity: .6;
-  transition: .3s ease;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 .disabled {
   opacity: .2 !important;
   cursor: not-allowed;

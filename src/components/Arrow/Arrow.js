@@ -1,14 +1,16 @@
 import React, { useMemo } from 'react'
 
+import styles from './ArrowStyles.module.scss'
+
 const Arrow = ({ onClick, disabled, src, ...rest }) => {
     const classes = useMemo(() => {
-        let base = 'arrow w-85px text-danger cursor-pointer align-self-center p-3 text-center'
+        const baseStyles = ['w-85px text-danger cursor-pointer align-self-center p-3 text-center', styles.arrow]
 
         if (disabled) {
-            base += ' disabled'
+            baseStyles.push('disabled')
         }
 
-        return base
+        return baseStyles.join(' ')
     }, [disabled])
 
     return (

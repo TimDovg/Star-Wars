@@ -1,0 +1,8 @@
+.arrow {
+  opacity: .6;
+  transition: .3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
