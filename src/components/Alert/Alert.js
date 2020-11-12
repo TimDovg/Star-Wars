@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import styles from './Alert.module.scss'
+import styles from './AlertStyles.module.scss'
 
 const Alert = ({ message, setError }) => {
     const history = useHistory()

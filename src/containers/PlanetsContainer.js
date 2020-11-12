@@ -31,7 +31,7 @@ const PlanetsContainer = () => {
 
     useEffect(() => {
         getPlanets(currentPage)
-            .catch(() => setError('Wrong fetching!'))
+            .catch(() => setError('Wrong fetching! Redirecting...'))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage])
@@ -51,7 +51,7 @@ const PlanetsContainer = () => {
                 </div>
                 <Arrow src={RightArrow} onClick={() => history.push(nextPage)} disabled={!nextPage} />
             </div>
-            <h4 className="text-center">{currentPage}</h4>
+            {!loader && <h4 className="text-center">{currentPage}</h4>}
 
             <Alert message={error} setError={setError} />
         </>
