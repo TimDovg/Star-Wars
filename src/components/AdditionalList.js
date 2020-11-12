@@ -13,18 +13,17 @@ const AdditionalList = ({ items, title, loading, onClick }) => {
     return (
         <>
             <div
-                className="text-info cursor-pointer fit-content underline-hover mb-2"
+                className="d-flex align-baseline text-info cursor-pointer fit-content underline-hover mb-2"
                 onClick={onClickHandler}
             >
                 {title}
                 <RotatedArrow rotate={show ? 180 : 0}/>
+                {loading && <div className="mt-m56"> <Loader /> </div>}
             </div>
-            {loading
-                ? <div className="w-10"> <Loader /> </div>
-                : items && show && items.map(item => (
-                    <div className="font-italic text-secondary" key={item}>{item}</div>
-                ))
-            }
+            {items && show && items.map(item => (
+                <div className="font-italic text-secondary" key={item}>{item}</div>
+            ))}
+            {items && show && !items.length && <div className="font-italic text-danger">NO RESIDENTS</div>}
         </>
     )
 }
