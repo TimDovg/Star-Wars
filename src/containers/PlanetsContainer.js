@@ -5,7 +5,7 @@ import Loader from '../components/Loader'
 import Arrow from '../components/Arrow/Arrow'
 import LeftArrow from '../images/left-arrow.svg'
 import RightArrow from '../images/right-arrow.svg'
-import Planet from '../components/Planet'
+import Planet from '../components/Planet/Planet'
 import { getDigitsFromString } from '../utils/utils'
 import Alert from '../components/Alert/Alert'
 

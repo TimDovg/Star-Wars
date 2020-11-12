@@ -6,3 +6,8 @@
     opacity: 1;
   }
 }
+
+.disabled {
+  opacity: .2 !important;
+  cursor: not-allowed;
+}

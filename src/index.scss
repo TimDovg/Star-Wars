@@ -34,21 +34,6 @@ a:hover {
   width: 10%;
 }
 
-.disabled {
-  opacity: .2 !important;
-  cursor: not-allowed;
-}
-
-.card {
-  transform: scale(.99);
-  transition: .3s ease;
-
-  &:hover {
-    transform: scale(1);
-    box-shadow: 0 0 5px 3px #007bff;
-  }
-}
-
 .scale-0 {
   transform: scale(0);
 }

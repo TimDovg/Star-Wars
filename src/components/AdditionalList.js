@@ -22,7 +22,7 @@ const AdditionalList = ({ items, title, loading, onClick }) => {
             {loading
                 ? <div className="w-10"> <Loader /> </div>
                 : items && show && items.map(item => (
-                    <div key={item}>{item}</div>
+                    <div className="font-italic text-secondary" key={item}>{item}</div>
                 ))
             }
         </>

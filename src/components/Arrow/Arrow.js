@@ -7,7 +7,7 @@ const Arrow = ({ onClick, disabled, src, ...rest }) => {
         const baseStyles = ['w-85px text-danger cursor-pointer align-self-center p-3 text-center', styles.arrow]
 
         if (disabled) {
-            baseStyles.push('disabled')
+            baseStyles.push(styles.disabled)
         }
 
         return baseStyles.join(' ')
